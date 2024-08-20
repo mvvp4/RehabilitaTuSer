@@ -38,7 +38,7 @@
 
         if($ejecutar){
             echo "<script>alert('Datos Actualizados!')</script>";
-            echo "<script>windoows.open('inicio.php','_self')</script>";
+            echo "<script>windoows.open('index.php','_self')</script>";
         }
     }
 ?>
