@@ -1,0 +1,154 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+#content_social{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+#content_logo{
+    position: fixed;
+    z-index: 1000;
+}
+#content_nav{
+    background: linear-gradient(to right,#D5B345,#CF6323);
+    display: flex;
+}
+#content_header{
+    margin-top: 5%;
+    background: linear-gradient(to right,#CF6323,#D5B345);
+    display: flex;
+    align-items: center;
+}
+#welcome p{
+    font-size: 0.8em;
+    font-family: Helvetica, Arial, sans-serif;;
+}
+.pr {
+    background-color: rgba(255, 255, 255, 0.199);
+    margin: 0% 5%;
+    border-radius: 2vh 2vh 0vh 0vh;
+    padding: 4% 0%;
+}
+.separador {
+    margin: 1.5% 5%;
+}
+h1 {
+    text-shadow: 2vh 2vh 1.5vh #cc6122;
+}
+.button {
+    color: black;
+    width: 30vh; 
+    height: 10vh;
+    margin: 2vh 10vh;
+    background-color: rgb(206, 134, 1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-text-stroke: 1px rgba(12, 12, 12, 0.74);
+    border-radius: 2vh;
+}
+
+/*media querie para dispositivos de pantalla chica*/
+@media screen and (max-width: 720px){
+    #logo{
+        width: 100px; 
+        height: 100px;
+        padding: 4% 0% 0% 4%;
+    }
+    body {
+        background-position: center;
+    }
+    #content_logo {
+        width: 125px;
+        height: 125px;
+        border-radius: 0% 0% 50% 0%;
+    }
+    #content_nav {
+        height: 20vh;
+    }
+    #content_header {
+        height: 20vh;
+    }
+    #title {
+        display: none;
+    }
+    /*contactos sociales*/
+    #content_social{
+        font-size: 1.5em;
+        width: auto;
+    }
+    #content_social #social_text{
+        display: none !important;
+    }
+    #content_social .social_logo{
+        margin-right: 2vh;
+        width: 8vh;
+        height: 8vh;
+    }
+    /*bienvenida o menu inicial*/
+    #welcome{
+        margin-top: 15%;
+        font-size: 1em;
+    }
+    .h2{
+        font-size: 2.5vh;
+        padding: 5% 0%;
+    }
+}
+
+/*media querie para dispositivos de pantalla grande*/
+@media screen and (min-width: 720px){
+    #logo{
+        width: 225px;
+        height: 225px;
+        padding: 3% 0% 0% 3%;
+    }
+    #content_logo{
+        width: 275px;
+        height: 275px;
+        border-radius: 0% 0% 100% 0%;
+    }
+    #content_nav{
+        height: 10vh; 
+        width: auto;
+    }
+    #content_header{
+        height: 10vh;
+    }
+    #content_nav #title {
+        display: flex;
+        width: 100%;
+        height: 10vh;
+        align-items: center;
+        font-size: 1.5em;
+        color: rgb(58, 58, 58);
+        vertical-align: bottom;
+        margin-left: 40%;
+    }
+    /*contactos sociales*/
+    #content_social{
+        text-align: right;
+        font-size: 1.2em;
+        width: 45vh;
+    }
+    #content_social #social_text{
+        padding-right: 2vh;
+    }
+    #content_social .social_logo{
+        margin-right: 3vh;
+        width: 8vh;
+        height: 8vh;
+    }
+    /*bienvenida o menu inicial*/
+    #welcome{
+        font-size: 3em;
+        margin-top: 5%;
+    }
+    .h2{
+        font-size: 10vh;
+    }
+}
