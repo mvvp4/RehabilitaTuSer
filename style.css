@@ -1,0 +1,139 @@
+@font-face {
+    font-family: "Colvetica";
+    src: url('Resources/fonts/coolveticarg.otf') format('truetype');
+}
+@font-face {
+    font-family: "Mondapick";
+    src: url('Resources/fonts/Mondapick.ttf') format('truetype');
+}
+#welcome-block{
+    display: flex;
+    background-image: url("Resources/icons/backgrounds/main.jpg");
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    width: 100%;
+}
+#welcome-block h1{
+    display: flex;
+    flex-direction: column;
+}
+#w-text-block {
+    text-align: center;
+}
+#w-text-block h2{
+color: rgb(0, 0, 0);
+}
+body {
+    background-image: linear-gradient(to bottom right, #d4ae47,#ec7d33);
+}
+nav {
+    font-weight: 500;
+    font-family:'Colvetica';
+    display: flex;
+    position: fixed;
+    background-color: rgba(240, 248, 255, 0.514);
+    z-index: 1000;
+    top: 0;
+    transition: height 0.3s ease, background-color 0.3s ease;
+    justify-content: space-between;
+}
+footer {
+    width: 100%;
+    display: flex;
+    font-family: 'Mondapick';
+    justify-content: end;
+    padding: 1% 20vh;
+    align-items: center;
+}
+#navbar.scrolled {
+    background-color: #ca7530e3;
+}
+#icon-welcome{
+    width: 30%;
+    height: auto;
+}
+.container{
+    width: 100%;
+    background-color: rgba(221, 221, 221, 0.815);
+    border-radius: 2vh;
+    overflow: hidden;
+}
+a:link, a:visited {
+    color: rgba(0, 0, 0, 0.527);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.aes.scrolled{
+    color: rgba(0, 0, 0, 0.685);
+}
+.button-navs {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+#content h1{
+    text-align: center;
+}
+#content p,ul{
+    font-family: "Mondapick";
+}
+.imgs-main{
+    background-position: center;
+    background-size: cover;
+}
+@media screen and (min-width: 768px) {
+.imgs-main{
+    width: 100%;
+    height: 45vh;
+    border-radius: 1vh;
+}
+#content {
+    padding: 5vh 2vh;
+}
+#content h1{
+    padding: 3vh 0 1vh 0;
+}
+#navbar.scrolled{
+    height: 10vh;
+}
+hr{
+    margin: 5vh 0;
+}
+.button-navs:hover {
+        background-color: rgba(206, 206, 206, 0.808);
+    }
+#welcome-block h1,h2{
+    text-shadow: 3px 3px 2vh rgb(255, 255, 255), 3px 3px 5vh rgb(255, 255, 255);
+}
+#welcome-block h1{
+    font-size: 10vh;
+}
+.button-navs{
+    padding: 0 12%;
+}
+nav {
+    box-sizing:inherit;
+    padding: 0 50vh;
+    width: 100%;
+    height: 6vh;
+}
+#welcome-block{
+    height: 60vh;
+    padding: 0% 12vh;
+    padding-top: 5vh;
+    border-bottom: 1px solid rgb(27, 27, 27);
+}
+#w-text-block{
+    padding-top: 8vh;
+}
+#w-text-block h2{
+    font-size: medium;
+}
+#icon-welcome{
+    margin-top: 6vh;
+    width: 90%;
+    height: auto;
+    box-shadow: 3px 3px 3px #cd6725;
+}
+}
