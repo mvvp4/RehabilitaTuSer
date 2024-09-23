@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Mondapick";
+    src: url('/Resources/fonts/Mondapick.ttf') format('truetype');
+}
+.faq-container{
+    width: 100%;
+}
+.faq-question {
+    font-family: "Mondapick";
+    background-color: rgba(33, 37, 41, 0.966);
+    color: aliceblue;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 1.5vh #cd6725;
+}
+.faq-question:hover{
+    box-shadow: 0 0 2.5vh #bd6022f6, 0 0 0.5vh #cc5219 inset;
+}
+.faq-question:active{
+    box-shadow: 0 -1px 2.5vh #bd6022f6, 0 -1px 1.5vh #b14715 inset
+}
+.faq-answer {
+    font-family: "Mondapick";
+    display: none;
+}
+.active .faq-answer {
+    display: block;
+}
+ul{
+    display: grid;
+    grid-template-columns: repeat(2, 50%); /* Dos columnas */
+    list-style: none; /* Elimina los estilos de lista predeterminados */
+    padding: 0vh;
+}
+@media screen and (min-width: 768px){
+    .faq-answer{
+        font-size: large;
+        padding: 1vh;
+        background-color: rgba(240, 248, 255, 0.527);
+        margin-top: 1.5vh;
+    }
+    .faq-item {
+        padding: 3vh;
+        border-radius: 8px;
+      }
+      
+    .faq-question {
+        padding: 1vh;
+        width: 100%;
+        font-size: 1.2em;
+    }
+      
+}

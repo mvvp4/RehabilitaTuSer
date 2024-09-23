@@ -24,8 +24,14 @@
 #w-text-block h2{
 color: rgb(0, 0, 0);
 }
-body {
+#body1 {
     background-image: linear-gradient(to bottom right, #d4ae47,#ec7d33);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.body-class{
+    background-image: linear-gradient(to bottom right, #d4ae47d2,#ec7d33d2) !important;
 }
 nav {
     font-weight: 500;
@@ -53,7 +59,7 @@ footer {
     width: 30%;
     height: auto;
 }
-.container{
+#inicio{
     width: 100%;
     background-color: rgba(221, 221, 221, 0.815);
     border-radius: 2vh;
@@ -82,7 +88,36 @@ a:link, a:visited {
     background-position: center;
     background-size: cover;
 }
+main{
+    flex: 1;
+}
+#faq-welcome{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+#main-faq{
+    display: flex;
+}
 @media screen and (min-width: 768px) {
+/*Estilos del FAQ*/
+#faq-welcome{
+    background-color: rgba(255, 248, 240, 0.438);
+    padding: 6vh 12vh 2vh 12vh;
+    height: auto;
+    border-bottom: 1px solid rgb(27, 27, 27);
+}
+#faq-welcome h1{
+    text-shadow: 3px 3px 2vh rgb(255, 255, 255), 3px 3px 5vh rgb(255, 255, 255);
+}
+#faq-welcome p{
+    font-family: "Colvetica";
+    font-size: 2.5vh;
+}
+
+/*index raiz*/
 .imgs-main{
     width: 100%;
     height: 45vh;
