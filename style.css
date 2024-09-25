@@ -6,6 +6,7 @@
     font-family: "Mondapick";
     src: url('Resources/fonts/Mondapick.ttf') format('truetype');
 }
+/*estilos generales o globales*/
 #welcome-block{
     display: flex;
     background-image: url("Resources/icons/backgrounds/main.jpg");
@@ -70,6 +71,9 @@ a:link, a:visited {
     text-decoration: none;
     transition: color 0.3s ease;
 }
+a:hover{
+    color: rgb(0, 0, 0);
+}
 .aes.scrolled{
     color: rgba(0, 0, 0, 0.685);
 }
@@ -77,6 +81,16 @@ a:link, a:visited {
     display: flex;
     align-items: center;
     height: 100%;
+}
+.button-navs img{
+    transition: opacity 0.3s ease;
+    width: 5vh;/*tamaño del alto del nav*/
+    height: 4.5vh;
+    opacity: 0.4;
+    
+}
+.button-navs img:hover{
+    opacity: 1;
 }
 #content h1{
     text-align: center;
@@ -97,6 +111,9 @@ main{
     align-items: center;
     text-align: center;
     flex-direction: column;
+    background-image: url('Resources/icons/backgrounds/faq.jpg');
+    background-size: cover;
+    background-position: center;
 }
 #main-faq{
     display: flex;
@@ -104,20 +121,23 @@ main{
 @media screen and (min-width: 768px) {
 /*Estilos del FAQ*/
 #faq-welcome{
-    background-color: rgba(255, 248, 240, 0.438);
     padding: 6vh 12vh 2vh 12vh;
     height: auto;
     border-bottom: 1px solid rgb(27, 27, 27);
 }
 #faq-welcome h1{
-    text-shadow: 3px 3px 2vh rgb(255, 255, 255), 3px 3px 5vh rgb(255, 255, 255);
+    text-shadow: 2px 2px 1vh rgb(255, 255, 255), 3px 3px 3vh rgb(255, 255, 255);
 }
 #faq-welcome p{
     font-family: "Colvetica";
     font-size: 2.5vh;
+    text-shadow: 1px 1px 1vh rgb(255, 255, 255), 0px 0px 1vh rgb(255, 255, 255);
 }
 
 /*index raiz*/
+#inicio{
+    box-shadow: 0 0 2.5vh #bd6022f6;
+}
 .imgs-main{
     width: 100%;
     height: 45vh;
@@ -142,7 +162,7 @@ hr{
     text-shadow: 3px 3px 2vh rgb(255, 255, 255), 3px 3px 5vh rgb(255, 255, 255);
 }
 #welcome-block h1{
-    font-size: 10vh;
+    font-size: 8vh;
 }
 .button-navs{
     padding: 0 12%;
