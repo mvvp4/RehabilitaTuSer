@@ -1,0 +1,134 @@
+/* Estilo general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, rgba(255, 162, 41, 0.6), rgba(247, 190, 36, 0.918)), url('') no-repeat center center fixed;
+    background-size: cover;
+    animation: fondoMovil 15s infinite alternate ease-in-out;
+    position: relative;
+}
+
+@keyframes fondoMovil {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Logo en la esquina superior izquierda */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo-container img {
+    width: 150px; /* Ajuste para reducir el tamaño del logo */
+    height: auto;
+}
+
+/* Contenedor de información a la izquierda */
+.info-container {
+    position: absolute;
+    left: 55px; /* Ajusta esta posición si es necesario */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 350px; /* Puedes ajustar el ancho según tus necesidades */
+    text-align: left;
+    color: white;
+}
+
+.info-container {
+    width: 100%; 
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.info-container h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #1d1919;
+}
+
+.info-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1d1919;
+}
+
+/* Caja del registro */
+.register-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 25px; /* Reducir el padding para que el formulario se vea más compacto */
+    border-radius: 10px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+    width: 350px; /* Hacemos el contenedor más pequeño */
+    text-align: center;
+    margin-left: 700px; /* Ajustar posición si es necesario */
+}
+
+/* Imagen de usuario */
+.register-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Estilos del título */
+.register-container h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+/* Estilos de los inputs */
+.register-container input {
+    width: 100%;
+    padding: 7px; /* Reducir padding para compactar */
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid #3498db;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+    transition: border-bottom-color 0.3s;
+}
+
+/* Cambiamos color del borde */
+.register-container input:focus {
+    border-bottom-color: #2ecc71;
+}
+
+/* Botones */
+.register-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 25px; /* Bordes más redondeados */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.register-container button:hover {
+    background-color: #2ecc71;
+    box-shadow: 0px 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+/* Estilo del link */
+.register-container a {
+    display: block;
+    margin-top: 10px;
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.register-container a:hover {
+    text-decoration: underline;
+}
