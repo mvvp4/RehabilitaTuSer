@@ -25,10 +25,29 @@
         <form action="#">
             <input type="text" placeholder="Nombre" required>
             <input type="text" placeholder="Email" required>
-            <input type="password" placeholder="Contraseña" required>
+
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <img id="togglePassword" class="toggle-password" src="ojocerrado.png" alt="Mostrar/Ocultar Contraseña">
+            </div>
+
             <button type="submit">Entrar</button>
-            <a href="#">¿Olvidaste tu contraseña?</a>
+            <a href="../Recuperar_pass/recuperar_password.html">¿Olvidaste tu contraseña?</a>
         </form>
     </div>
+
+    <script>
+       const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            
+            // Alterna las imágenes entre el ojo abierto y cerrado
+            const imgSrc = togglePassword.getAttribute('src') === 'ojocerrado.png' ? 'ojoabierto.png' : 'ojocerrado.png';
+            togglePassword.setAttribute('src', imgSrc);
+        });
+    </script>
 </body>
 </html>
