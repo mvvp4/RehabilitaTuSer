@@ -21,6 +21,9 @@ if ($result->num_rows > 0) {
     $token_expiration = date("Y-m-d H:i:s", strtotime('+1 hour')); // 1 hora de validez
     $url = "http://tu-sitio.com/restablecer_contrasena.php?token=$token";
 
+    // Cierra el primer statement antes de reutilizarlo
+    $stmt->close();
+
     // Guarda el token y la fecha de expiración en la base de datos
     $sql = "UPDATE registros SET token = ?, token_expiration = ? WHERE email = ?";
     $stmt = $conn->prepare($sql);

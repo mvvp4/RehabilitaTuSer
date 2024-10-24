@@ -3,14 +3,16 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background: linear-gradient(120deg, rgba(255, 162, 41, 0.6), rgba(247, 190, 36, 0.918)), url('') no-repeat center center fixed;
     background-size: cover;
     animation: fondoMovil 15s infinite alternate ease-in-out;
     position: relative;
+    flex-direction: row; /* Asegura que los elementos estén en fila */
+    padding: 20px;
 }
 
 @keyframes fondoMovil {
@@ -26,25 +28,17 @@ body {
 }
 
 .logo-container img {
-    width: 150px; /* Ajuste para reducir el tamaño del logo */
+    width: 200px; /* Ajuste para reducir el tamaño del logo */
     height: auto;
 }
 
 /* Contenedor de información a la izquierda */
 .info-container {
-    position: absolute;
-    left: 55px; /* Ajusta esta posición si es necesario */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 350px; /* Puedes ajustar el ancho según tus necesidades */
+    position: relative; /* Cambiado a relativo */
+    max-width: 350px; /* Fijamos un ancho máximo para que no se desborde */
     text-align: left;
     color: white;
-}
-
-.info-container {
-    width: 100%; 
-    height: auto;
-    margin-bottom: 20px;
+    margin-right: 20px; /* Espacio entre el contenido y el registro */
 }
 
 .info-container h2 {
@@ -62,12 +56,13 @@ body {
 /* Caja del registro */
 .register-container {
     background: rgba(255, 255, 255, 0.85);
-    padding: 25px; /* Reducir el padding para que el formulario se vea más compacto */
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
-    width: 350px; /* Hacemos el contenedor más pequeño */
+    width: 350px;
     text-align: center;
-    margin-left: 700px; /* Ajustar posición si es necesario */
+    margin-left: auto;
+    margin-right: auto; /* Centramos el contenedor si hay espacio */
 }
 
 /* Imagen de usuario */
@@ -88,7 +83,7 @@ body {
 /* Estilos de los inputs */
 .register-container input {
     width: 100%;
-    padding: 7px; /* Reducir padding para compactar */
+    padding: 7px;
     margin: 8px 0;
     border: none;
     border-bottom: 2px solid #3498db;
@@ -109,7 +104,7 @@ body {
     padding: 10px;
     background-color: #3498db;
     border: none;
-    border-radius: 25px; /* Bordes más redondeados */
+    border-radius: 25px;
     color: white;
     font-size: 16px;
     cursor: pointer;

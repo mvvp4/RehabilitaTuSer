@@ -29,7 +29,7 @@ $sql = "INSERT INTO registros (nombre, apellido, email, telefono, documento, dir
 
 if ($conn->query($sql) === TRUE) {
     echo "Registro guardado exitosamente.";
-    header("Location: ../Login/login.php");
+    header("Location: ../Login/login2.html");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
