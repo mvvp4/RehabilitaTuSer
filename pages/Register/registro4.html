@@ -23,14 +23,14 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqf0Wx4wmsKfLYsiLdBx6H4D8bwQBurWhx5g&s" alt="Usuario">
         <h2>Registrate</h2>
         <form action="guardar_registro.php" method="post">
-            <input type="text" id="nombre" placeholder="Nombre" required>
-            <input type="text" id="apellido" placeholder="Apellido" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="tel" id="numero" placeholder="Numero de contacto" required>
-            <input type="text" id="documento" placeholder="Documento" required>
-            <input type="text" id="direccion" placeholder="Direccion" required>
-            <input type="password" id="password" placeholder="Contraseña" required>
-            <input type="password" id="password2" placeholder="Repite la Contraseña" required>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="tel" id="numero" name="telefono" placeholder="Numero de contacto" required>
+            <input type="text" id="documento" name="documento" placeholder="Documento" required>
+            <input type="text" id="direccion" name="direccion" placeholder="Direccion" required>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            <input type="password" id="password2" name="confirm_password" placeholder="Repite la Contraseña" required>
             <button type="submit">Entrar</button>
             <a href="../Login/login2.html">¿Ya tienes una cuenta?</a>
         </form>
