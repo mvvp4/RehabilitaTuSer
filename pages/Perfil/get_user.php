@@ -3,7 +3,7 @@
 include 'db_connection.php'; 
 
 
-$usuario_id = 13; 
+$usuario_id = 1; 
 
 
 $sql = "SELECT * FROM registros WHERE id = ?";

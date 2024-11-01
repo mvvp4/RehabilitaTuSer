@@ -77,7 +77,6 @@ body {
     color: #34495e;
 }
 
-.recup-container input[type="password"],
 .recup-container input[type="password"] {
     width: 100%;
     padding: 10px;
@@ -88,10 +87,8 @@ body {
     font-size: 16px;
     background: transparent;
     transition: border-bottom-color 0.3s;
-    position: relative;
 }
 
-.recup-container input[type="password"]:focus,
 .recup-container input[type="password"]:focus {
     border-bottom-color: #2ecc71;
 }
@@ -126,13 +123,4 @@ body {
 
 .password-container {
     position: relative;
-}
-
-.password-container img {
-    width: 55px; /* Ajusta el tamaño del ícono */
-    height: 55px; /* Ajusta el tamaño del ícono */
-    position: absolute;
-    top: 6%;
-    right: 5%;
-    cursor: pointer;
 }

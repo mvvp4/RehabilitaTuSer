@@ -1,6 +1,8 @@
 <?php
-include 'get_user.php'; 
+session_start(); // Inicia la sesión para poder destruirla
+include 'get_user.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,13 +19,23 @@ include 'get_user.php';
     <div class="profile-container">
         <div class="profile-header">
             <div class="profile-pic-container">
-                <img src="../../Resources/icons/hombre.png" alt="Foto de perfil" class="profile-pic">
+                <?php
+                $genero = htmlspecialchars($usuario['genero']);
+                if ($genero === 'Mujer') {
+                    $profilePic = '../../Resources/icons/mujer.png';
+                } else {
+                    $profilePic = '../../Resources/icons/hombre.png';
+                }
+                ?>
+                <img src="<?php echo $profilePic; ?>" alt="Foto de perfil" class="profile-pic">
             </div>
             <h1>¡Bienvenido <?php echo htmlspecialchars($usuario['nombre']); ?>!</h1>
         </div>
         <div class="profile-buttons">
-            <button class="btn edit-btn">Editar Perfil</button>
-            <button class="btn logout-btn">Cerrar Sesión</button>
+            <button class="btn edit-btn" onclick="window.location.href='editar_perfil.php'">Editar Perfil</button>
+            <form action="logout.php" method="POST" style="display:inline;">
+                <button type="submit" class="btn logout-btn">Cerrar Sesión</button>
+            </form>
         </div>
 
         <div class="profile-info">
@@ -35,7 +47,6 @@ include 'get_user.php';
                 <tr>
                     <th>Teléfono</th>
                     <td><?php echo htmlspecialchars($usuario['telefono']); ?></td>
-                    
                 </tr>
                 <tr>
                     <th>Email</th>

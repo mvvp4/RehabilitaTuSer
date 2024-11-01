@@ -6,6 +6,8 @@ CREATE TABLE registros (
     telefono VARCHAR(20),
     documento INT,
     direccion VARCHAR(255),
+    genero VARCHAR(50),
+    orientacion VARCHAR(50),
     password VARCHAR(255) NOT NULL,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     token VARCHAR(255),
