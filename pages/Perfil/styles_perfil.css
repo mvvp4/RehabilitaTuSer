@@ -25,7 +25,7 @@ body {
 }
 
 .logo {
-    width: 185px;
+    width: 160px;
     height: auto;
 }
 
@@ -60,9 +60,38 @@ body {
     object-fit: cover;
 }
 
-/* Añadiendo espacio entre cada sección */
+.profile-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #3878ee; /* Verde para editar */
+    color: white;
+}
+
+.logout-btn {
+    background-color: #f44336; /* Rojo para cerrar sesión */
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
 .profile-info, .calendar-container, .services-container {
-    margin-bottom: 40px; /* Espacio extra entre secciones */
+    margin-bottom: 40px; 
 }
 
 .profile-info table, .services-container table {

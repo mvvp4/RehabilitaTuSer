@@ -1,3 +1,6 @@
+<?php
+include 'get_user.php'; 
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,26 +19,35 @@
             <div class="profile-pic-container">
                 <img src="../../Resources/icons/hombre.png" alt="Foto de perfil" class="profile-pic">
             </div>
-            <h1>¡Bienvenido Lucas!</h1>
+            <h1>¡Bienvenido <?php echo htmlspecialchars($usuario['nombre']); ?>!</h1>
+        </div>
+        <div class="profile-buttons">
+            <button class="btn edit-btn">Editar Perfil</button>
+            <button class="btn logout-btn">Cerrar Sesión</button>
         </div>
 
         <div class="profile-info">
             <table>
                 <tr>
-                    <th>CVU</th>
-                    <td>123456789</td>
+                    <th>Documento</th>
+                    <td><?php echo htmlspecialchars($usuario['documento']); ?></td>
                 </tr>
                 <tr>
                     <th>Teléfono</th>
-                    <td>+52 123 456 7890</td>
+                    <td><?php echo htmlspecialchars($usuario['telefono']); ?></td>
+                    
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><?php echo htmlspecialchars($usuario['email']); ?></td>
+                </tr>
+                <tr>
+                    <th>Genero</th>
+                    <td><?php echo htmlspecialchars($usuario['genero']); ?></td>
                 </tr>
                 <tr>
                     <th>Password</th>
-                    <td>********</td>
-                </tr>
-                <tr>
-                    <th>Método de Pago</th>
-                    <td>Tarjeta de Crédito</td>
+                    <td><?php echo str_repeat('*', strlen($usuario['password'])); ?></td>
                 </tr>
             </table>
         </div>

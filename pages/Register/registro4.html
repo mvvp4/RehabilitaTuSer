@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles4.css">
 </head>
 <body>
-    
     <div class="logo-container">
         <img src="13.png" alt="Logo de la empresa">
     </div>
@@ -21,16 +20,49 @@
     
     <div class="register-container">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqf0Wx4wmsKfLYsiLdBx6H4D8bwQBurWhx5g&s" alt="Usuario">
-        <h2>Registrate</h2>
+        <h2>Regístrate</h2>
         <form action="guardar_registro.php" method="post">
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-            <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="tel" id="numero" name="telefono" placeholder="Numero de contacto" required>
-            <input type="text" id="documento" name="documento" placeholder="Documento" required>
-            <input type="text" id="direccion" name="direccion" placeholder="Direccion" required>
-            <input type="password" id="password" name="password" placeholder="Contraseña" required>
-            <input type="password" id="password2" name="confirm_password" placeholder="Repite la Contraseña" required>
+            <table>
+                <tr>
+                    <td><input type="text" id="nombre" name="nombre" placeholder="Nombre" required></td>
+                    <td><input type="text" id="apellido" name="apellido" placeholder="Apellido" required></td>
+                </tr>
+                <tr>
+                    <td><input type="email" id="email" name="email" placeholder="Email" required></td>
+                    <td><input type="tel" id="numero" name="telefono" placeholder="Número de contacto" required></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="documento" name="documento" placeholder="Documento" required></td>
+                    <td><input type="text" id="direccion" name="direccion" placeholder="Dirección" required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="genero">Género:</label>
+                        <select id="genero" name="genero" required>
+                            <option value="">Seleccionar</option>
+                            <option value="Hombre">Hombre</option>
+                            <option value="Mujer">Mujer</option>
+                            <option value="No binario">No binario</option>
+                            <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="orientacion">Orientación:</label>
+                        <select id="orientacion" name="orientacion" required>
+                            <option value="">Seleccionar</option>
+                            <option value="Heterosexual">Heterosexual</option>
+                            <option value="Pansexual">Pansexual</option>
+                            <option value="Homosexual">Homosexual</option>
+                            <option value="Transexual">Transexual</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="password" id="password" name="password" placeholder="Contraseña" required></td>
+                    <td><input type="password" id="password2" name="confirm_password" placeholder="Repite la Contraseña" required></td>
+                </tr>
+            </table>
             <button type="submit">Entrar</button>
             <a href="../Login/login2.html">¿Ya tienes una cuenta?</a>
         </form>

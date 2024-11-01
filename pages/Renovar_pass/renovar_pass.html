@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renovar Contraseña - Centro de Rehabilitación</title>
+    <link rel="stylesheet" href="styles_renov.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="../../Resources/icons/logo/13.png" alt="Logo de la empresa">
+    </div>
+
+    <div class="info-container">
+        <h2>Renova tu Contraseña</h2>
+        <p>
+            Es importante mantener la seguridad de tu cuenta actualizada. Si sientes que tu contraseña puede haber sido comprometida o simplemente deseas mejorar la seguridad, te recomendamos que la renueves periódicamente.
+            Recuerda elegir una contraseña que sea única y segura, combinando letras, números y caracteres especiales.
+        </p>
+    </div>
+
+    <div class="recup-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqf0Wx4wmsKfLYsiLdBx6H4D8bwQBurWhx5g&s" alt="Usuario">
+        <h2>Renovar Contraseña</h2>
+        <form action="" method="post">
+            <div class="password-container">
+                <input type="password" name="password" placeholder="Introduce tu nueva contraseña" required id="password">
+                <img id="togglePassword1" class="toggle-password" src="ojocerrado.png" alt="Mostrar/Ocultar Contraseña">
+            </div>
+            <div class="password-container">
+                <input type="password" name="password2" placeholder="Confirmar la contraseña" required id="password2">
+                <img id="togglePassword2" class="toggle-password" src="ojocerrado.png" alt="Mostrar/Ocultar Contraseña">
+            </div>
+            <button type="submit">Cambiar contraseña</button>
+            <a href="../Login/login2.html">¿Recordaste tu contraseña? Inicia sesión aquí</a>
+        </form>
+    </div>
+    
+    <script>
+        // Función para mostrar/ocultar contraseña
+        function setupPasswordToggle(toggleElement, passwordField) {
+            toggleElement.addEventListener('click', function () {
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
+
+                // Alterna las imágenes entre el ojo abierto y cerrado
+                const imgSrc = toggleElement.getAttribute('src') === 'ojocerrado.png' ? 'ojoabierto.png' : 'ojocerrado.png';
+                toggleElement.setAttribute('src', imgSrc);
+            });
+        }
+
+        // Configurar el primer campo de contraseña
+        const togglePassword1 = document.querySelector('#togglePassword1');
+        const password1 = document.querySelector('#password');
+        setupPasswordToggle(togglePassword1, password1);
+
+        // Configurar el segundo campo de contraseña
+        const togglePassword2 = document.querySelector('#togglePassword2');
+        const password2 = document.querySelector('#password2');
+        setupPasswordToggle(togglePassword2, password2);
+    </script>
+</body>
+</html>

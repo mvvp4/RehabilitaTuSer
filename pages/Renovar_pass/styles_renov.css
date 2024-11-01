@@ -1,16 +1,16 @@
-/* Estilo general */
+/* Estilos generales */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: linear-gradient(120deg, rgba(255, 162, 41, 0.6), rgba(247, 190, 36, 0.918)), url('') no-repeat center center fixed;
     background-size: cover;
     animation: fondoMovil 15s infinite alternate ease-in-out;
-    padding: 20px;
+    position: relative;
 }
 
 @keyframes fondoMovil {
@@ -25,15 +25,19 @@ body {
 }
 
 .logo-container img {
-    width: 200px;
+    width: 250px; /* Ajusta el tamaño del logo */
     height: auto;
 }
 
 .info-container {
-    max-width: 350px;
+    position: absolute;
+    left: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 420px;
     text-align: left;
     color: white;
-    margin-right: 20px;
+    margin-top: 70px;
 }
 
 .info-container h2 {
@@ -46,66 +50,55 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: #1d1919;
+    word-wrap: break-word;
+    max-width: 350px;
 }
 
-.register-container {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
-    width: 500px; /* Aumentamos el ancho */
+.recup-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    width: 370px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 550px;
 }
 
-.register-container img {
-    width: 80px;
-    height: 80px;
+.recup-container img {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
 
-.register-container h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
+.recup-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
     color: #34495e;
 }
 
-/* Estilos de los inputs y selects */
-.register-container input,
-.register-container select {
-    width: 95%;
-    padding: 10px; /* Aumentamos el relleno para darle más espacio */
-    margin: 8px 0;
+.recup-container input[type="password"],
+.recup-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
     border: none;
     border-bottom: 2px solid #3498db;
     outline: none;
-    font-size: 14px;
+    font-size: 16px;
     background: transparent;
     transition: border-bottom-color 0.3s;
+    position: relative;
 }
 
-.register-container input:focus,
-.register-container select:focus {
+.recup-container input[type="password"]:focus,
+.recup-container input[type="password"]:focus {
     border-bottom-color: #2ecc71;
 }
 
-/* Estilos de la tabla */
-table {
+.recup-container button {
     width: 100%;
-    border-spacing: 15px 10px; /* Añadimos espacio entre las celdas */
-}
-
-table td {
-    padding: 10px; /* Más relleno en cada celda */
-    vertical-align: middle;
-}
-
-/* Botones */
-.register-container button {
-    width: 100%;
-    padding: 12px;
+    padding: 10px;
     background-color: #3498db;
     border: none;
     border-radius: 25px;
@@ -115,19 +108,31 @@ table td {
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.register-container button:hover {
+.recup-container button:hover {
     background-color: #2ecc71;
-    box-shadow: 0px 4px 10px rgba(46, 204, 113, 0.3);
+    box-shadow: 0px 4px 15px rgba(46, 204, 113, 0.3);
 }
 
-/* Estilo del link */
-.register-container a {
+.recup-container a {
     display: block;
     margin-top: 10px;
     color: #2980b9;
     text-decoration: none;
 }
 
-.register-container a:hover {
+.recup-container a:hover {
     text-decoration: underline;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container img {
+    width: 55px; /* Ajusta el tamaño del ícono */
+    height: 55px; /* Ajusta el tamaño del ícono */
+    position: absolute;
+    top: 6%;
+    right: 5%;
+    cursor: pointer;
 }
