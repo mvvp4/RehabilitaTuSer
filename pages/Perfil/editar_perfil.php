@@ -9,12 +9,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     if (isset($usuario)) {
-        $sql = "UPDATE registros SET documento = ?, telefono = ?, email = ?, password = ? WHERE id = ?";
-        $stmt = $con->prepare($sql);
-        
-        $usuario_id = $usuario['id']; 
-        $stmt->bind_param("ssssi", $documento, $telefono, $email, password_hash($password, PASSWORD_DEFAULT), $usuario_id);
-        
+        if (empty($password)) {
+            $sql = "UPDATE clients SET dni = ?, phone = ?, user = ? WHERE user = ?";
+            $stmt = $conn->prepare($sql);
+    
+            if ($stmt === false) {
+                die("Error en la preparación de la consulta: " . $conn->error);
+            }
+
+            $stmt->bind_param("ssss", $documento, $telefono, $email, $usuario['user']);
+        } else {
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            $sql = "UPDATE clients SET dni = ?, phone = ?, user = ?, password = ? WHERE user = ?";
+            $stmt = $conn->prepare($sql);
+
+            if ($stmt === false) {
+                die("Error en la preparación de la consulta: " . $conn->error);
+            }
+
+            $stmt->bind_param("sssss", $documento, $telefono, $email, $hashed_password, $usuario['user']);
+        }
+
         if ($stmt->execute()) {
             header("Location: perfil.php");
             exit();
@@ -27,8 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "No se encontraron datos del usuario.";
     }
 }
-$con->close();
+
+$conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,16 +65,16 @@ $con->close();
         <h1>Editar Perfil</h1>
         <form action="" method="POST">
             <label for="documento">Documento:</label>
-            <input type="text" id="documento" name="documento" value="<?php echo isset($usuario['documento']) ? htmlspecialchars($usuario['documento']) : ''; ?>" required>
+            <input type="text" id="documento" name="documento" value="<?php echo isset($usuario['dni']) ? htmlspecialchars($usuario['dni']) : ''; ?>" required>
 
             <label for="telefono">Teléfono:</label>
-            <input type="text" id="telefono" name="telefono" value="<?php echo isset($usuario['telefono']) ? htmlspecialchars($usuario['telefono']) : ''; ?>" required>
+            <input type="text" id="telefono" name="telefono" value="<?php echo isset($usuario['phone']) ? htmlspecialchars($usuario['phone']) : ''; ?>" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="<?php echo isset($usuario['email']) ? htmlspecialchars($usuario['email']) : ''; ?>" required>
+            <input type="email" id="email" name="email" value="<?php echo isset($usuario['user']) ? htmlspecialchars($usuario['user']) : ''; ?>" required>
 
             <label for="password">Nueva Contraseña:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password">
 
             <div class="form-buttons">
                 <button type="submit" class="btn save-btn">Guardar Cambios</button>
