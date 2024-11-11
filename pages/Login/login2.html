@@ -24,7 +24,7 @@
         <h2>Iniciar Sesión</h2>
         <form action="controller.php" method="post">
             <input type="text" name="nombre" placeholder="Nombre" required>
-            <input type="text" name="user" placeholder="Email" required>
+            <input type="text" name="email" placeholder="Email" required>
 
             <div class="password-container">
                 <input type="password" id="password" name="password" placeholder="Contraseña" required>
@@ -44,6 +44,7 @@
             const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
             password.setAttribute('type', type);
             
+            // Alterna las imágenes entre el ojo abierto y cerrado
             const imgSrc = togglePassword.getAttribute('src') === 'ojocerrado.png' ? 'ojoabierto.png' : 'ojocerrado.png';
             togglePassword.setAttribute('src', imgSrc);
         });

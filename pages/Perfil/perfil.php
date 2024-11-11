@@ -1,7 +1,6 @@
 <?php 
 session_start(); 
-    include 'get_user.php';
-    include 'db_connection.php';
+include 'get_user.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,18 +19,16 @@ session_start();
         <div class="profile-header">
             <div class="profile-pic-container">
                 <?php
-                $genero = htmlspecialchars($usuario['genre']); 
+                $genero = htmlspecialchars($usuario['genero']);
                 if ($genero === 'Mujer') {
                     $profilePic = '../../Resources/icons/mujer.png';
-                } else if ($genero === 'Hombre') {
-                    $profilePic = '../../Resources/icons/hombre.png';
                 } else {
-                    $profilePic = '../../Resources/icons/no_decirl.png';
+                    $profilePic = '../../Resources/icons/hombre.png';
                 }
                 ?>
                 <img src="<?php echo $profilePic; ?>" alt="Foto de perfil" class="profile-pic">
             </div>
-            <h1>¡Bienvenido <?php echo htmlspecialchars($usuario['name']); ?>!</h1>
+            <h1>¡Bienvenido <?php echo htmlspecialchars($usuario['nombre']); ?>!</h1>
         </div>
         <div class="profile-buttons">
             <button class="btn edit-btn">Editar Perfil</button>
@@ -46,25 +43,23 @@ session_start();
             <table>
                 <tr>
                     <th>Documento</th>
-                    <td><?php echo htmlspecialchars($usuario['dni']); ?></td>
+                    <td><?php echo htmlspecialchars($usuario['documento']); ?></td>
                 </tr>
                 <tr>
                     <th>Teléfono</th>
                     <td><?php echo htmlspecialchars($usuario['telefono']); ?></td>                    
                </tr>
-                    <td><?php echo htmlspecialchars($usuario['phone']); ?></td> 
-                </tr>
                 <tr>
                     <th>Email</th>
-                    <td><?php echo htmlspecialchars($usuario['user']); ?></td>
+                    <td><?php echo htmlspecialchars($usuario['email']); ?></td>
                 </tr>
                 <tr>
-                    <th>Género</th>
-                    <td><?php echo htmlspecialchars($usuario['genre']); ?></td>
+                    <th>Genero</th>
+                    <td><?php echo htmlspecialchars($usuario['genero']); ?></td>
                 </tr>
                 <tr>
                     <th>Password</th>
-                    <td><?php echo str_repeat('*', strlen($usuario['password'])); ?></td> 
+                    <td><?php echo str_repeat('*', strlen($usuario['password'])); ?></td>
                 </tr>
             </table>
         </div>

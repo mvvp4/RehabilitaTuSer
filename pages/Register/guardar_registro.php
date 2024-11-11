@@ -1,38 +1,40 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Activa la visualización de errores de MySQL
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    $servername = "mysql-157dc9d5-santiagopontin2811-958d.k.aivencloud.com";
-    $username = "avnadmin";
-    $password = "";
-    $dbname = "defaultdb";
-    $port = 15658;
-    
-    $conn = new mysqli($servername, $username, $password, $dbname, $port);
-    
+    // Conexión a la base de datos
+    $conn = new mysqli("localhost", "root", "", "usuarios");
+
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
-    $conn->ssl_set(NULL, NULL, NULL, NULL, NULL);
 
-    $user = isset($_POST['email']) ? $conn->real_escape_string($_POST['email']) : null;
-    $name = isset($_POST['nombre']) ? $conn->real_escape_string($_POST['nombre']) : null;
-    $dni = isset($_POST['documento']) ? intval($_POST['documento']) : null;
-    $genre = isset($_POST['genero']) ? $conn->real_escape_string($_POST['genero']) : null;
-    $phone = isset($_POST['telefono']) ? $conn->real_escape_string($_POST['telefono']) : null;
-    $address = isset($_POST['direccion']) ? $conn->real_escape_string($_POST['direccion']) : null;
+    // Captura y sanitiza los datos enviados por el formulario
+    $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
+    $apellido = isset($_POST['apellido']) ? $_POST['apellido'] : null;
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : null;
+    $documento = isset($_POST['documento']) ? $_POST['documento'] : null;
+    $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : null;
+    $genero = isset($_POST['genero']) ? $_POST['genero'] : null;
+    $orientacion = isset($_POST['orientacion']) ? $_POST['orientacion'] : null;
     $password = isset($_POST['password']) ? $_POST['password'] : null;
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : null;
 
+    // Validación de contraseñas
     if ($password !== $confirm_password) {
         die("Error: Las contraseñas no coinciden.");
     }
 
+    // Cifra la contraseña
     $password_hashed = password_hash($password, PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare("INSERT INTO clients (user, password, name, dni, genre, phone, adress) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $user, $password_hashed, $name, $dni, $genre, $phone, $address);
+    // Sentencia preparada para insertar los datos
+    $stmt = $conn->prepare("INSERT INTO registros (nombre, apellido, email, telefono, documento, direccion, genero, orientacion, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssss", $nombre, $apellido, $email, $telefono, $documento, $direccion, $genero, $orientacion, $password_hashed);
 
+    // Ejecución de la consulta
     if ($stmt->execute()) {
         echo "Registro guardado exitosamente.";
         header("Location: ../Login/login2.html");
@@ -41,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $stmt->error;
     }
 
+    // Cierra la consulta y la conexión
     $stmt->close();
     $conn->close();
 } else {
