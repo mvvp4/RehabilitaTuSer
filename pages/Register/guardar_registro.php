@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Conexión fallida: " . $conn->connect_error);
     }
     $conn->ssl_set(NULL, NULL, NULL, NULL, NULL);
-
+    
     $user = isset($_POST['email']) ? $conn->real_escape_string($_POST['email']) : null;
     $name = isset($_POST['nombre']) ? $conn->real_escape_string($_POST['nombre']) : null;
     $dni = isset($_POST['documento']) ? intval($_POST['documento']) : null;

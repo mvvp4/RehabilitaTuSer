@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Servicios de Rehabilitación</title>
+    <link rel="stylesheet" href="styles_buy.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor-logo">
+            <img src="../../../Resources/icons/logo/13.png" alt="Logo" class="logo">
+            <h1>Compra Segura de Servicios de Rehabilitación</h1>
+        </div>
+    </header>
+
+    <div class="contenedor-compra">
+        <div class="pago-rapido">
+            <a href="https://www.paypal.com" target="_blank" class="boton-pago paypal">Pagar con PayPal</a>
+            <a href="https://pay.google.com" target="_blank" class="boton-pago gpay">Pagar con Google Pay</a>
+        </div>
+
+        <div class="contenedor-formulario">
+            <section class="revisar-pedido">
+                <h2>1. Revisa tu Pedido</h2>
+                <div class="info-producto">
+                    <p><strong>Servicio de Rehabilitación</strong></p>
+                    <p>Duración: Sesión de 1 hora</p>
+                    <p>Precio: $100 USD</p>
+                </div>
+                <p><strong>Subtotal:</strong> $100 USD</p>
+                <button class="boton-cambiar">Cambiar Servicio</button>
+            </section>
+
+            <section class="direccion-facturacion">
+                <h2>2. Información de Contacto</h2>
+                <form action="procesar_pago.php" method="POST">
+                    <label for="correo">Correo Electrónico*</label>
+                    <input type="email" id="correo" name="correo" required>
+
+                    <label for="nombre">Nombre*</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="apellido">Apellido*</label>
+                    <input type="text" id="apellido" name="apellido" required>
+
+                    <label for="telefono">Teléfono*</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+
+                    <label for="pais">País*</label>
+                    <select id="pais" name="pais" required>
+                        <option value="">Selecciona tu país</option>
+                        <option value="mx">México</option>
+                        <option value="us">Estados Unidos</option>
+                        <option value="ar">Argentina</option>
+                        <option value="pe">Perú</option>
+                        <option value="co">Colombia</option>
+                        <option value="pa">Paraguay</option>
+                        <option value="bo">Bolivia</option>
+                        <option value="br">Brasil</option>
+                        <option value="ch">Chile</option>
+                        <option value="ve">Venezuela</option>
+                        <option value="ec">Ecuador</option>
+                    </select>
+                </form>
+            </section>
+
+            <section class="metodo-pago">
+                <h2>3. Selecciona el Método de Pago</h2>
+                <div class="opciones-pago">
+                    <div>
+                        <input type="radio" id="tarjeta" name="metodo_pago" value="tarjeta" onclick="mostrarFormularioTarjeta()">
+                        <label for="tarjeta">Tarjeta de Crédito/Débito</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="paypal" name="metodo_pago" value="paypal" onclick="ocultarFormularioTarjeta()">
+                        <label for="paypal">PayPal</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="gpay" name="metodo_pago" value="gpay" onclick="ocultarFormularioTarjeta()">
+                        <label for="gpay">Google Pay</label>
+                    </div>
+                </div>
+
+                <div id="formulario-tarjeta" class="formulario-tarjeta" style="display: none;">
+                    <h3>Información de la Tarjeta</h3>
+                    <label for="num_tarjeta">Número de Tarjeta</label>
+                    <input type="text" id="num_tarjeta" name="num_tarjeta">
+
+                    <label for="fecha_exp">Fecha de Expiración</label>
+                    <input type="text" id="fecha_exp" name="fecha_exp" placeholder="MM/AA">
+
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv">
+                </div>
+            </section>
+
+            <section class="resumen-pedido">
+                <h2>Resumen de Pedido</h2>
+                <p>Servicio de Rehabilitación</p>
+                <p>Subtotal: $100 USD</p>
+                <p>Total: <strong>$100 USD</strong></p>
+                <button type="submit" class="boton-completar">Completar Pedido</button>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function mostrarFormularioTarjeta() {
+            document.getElementById("formulario-tarjeta").style.display = "block";
+        }
+
+        function ocultarFormularioTarjeta() {
+            document.getElementById("formulario-tarjeta").style.display = "none";
+        }
+    </script>
+</body>
+</html>

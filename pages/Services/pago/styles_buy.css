@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe6cc;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.contenedor-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 180px;
+    height: 100px;
+}
+
+.contenedor-compra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pago-rapido {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.boton-pago {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.paypal {
+    background-color: #ffc439;
+}
+
+.gpay {
+    background-color: #000;
+}
+
+.contenedor-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.boton-cambiar {
+    width: 50%;
+    padding: 9px;
+    background-color: #3c69ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+
+.opciones-pago {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario-tarjeta {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.info-producto, .resumen-pedido, .direccion-facturacion, .metodo-pago {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.boton-completar {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6f3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.boton-completar:hover {
+    background-color: #e65a23;
+}
